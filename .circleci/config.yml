@@ -1,6 +1,8 @@
 version: 2
 jobs:
   update-push-count:
+    docker:
+      - image: python:3.8
     steps:
       - checkout
       - run:
