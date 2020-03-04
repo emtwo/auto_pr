@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import sys
+import subprocess
+from pathlib import Path
+
+
+def main():
+	PUSH_COUNT_FILE = "push_count.txt"
+	sys.path.append(str(Path(__file__).parent.resolve()))
+
+	push_count = 0
+	with open(PUSH_COUNT_FILE, 'r') as f:
+	    lines = f.read().splitlines()
+	    last_line = lines[-1]
+	    push_count = int(last_line)
+
+	push_count += 1
+	with open(PUSH_COUNT_FILE, "a") as f:
+		f.write("\n" + str(push_count))
+
+if __name__ == "__main__":
+    main()

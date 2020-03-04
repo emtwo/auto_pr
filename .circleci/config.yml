@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  update-push-count:
+    steps:
+      - checkout
+      - run:
+          name: Update the push_count.txt file.
+          command: script/update_push_count
+workflows:
+  version: 2
+  build:
+    jobs:
+    - update-push-count
