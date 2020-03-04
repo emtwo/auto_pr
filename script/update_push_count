@@ -5,6 +5,8 @@ from pathlib import Path
 
 def main():
 	PUSH_COUNT_FILE = "push_count.txt"
+	PUSH_COUNT_REPO = "https://api.github.com/repos/emtwo/auto_pr/pulls"
+
 	sys.path.append(str(Path(__file__).parent.resolve()))
 
 	push_count = 0
