@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Change ownership of file that needs to be updated
+          command: chown -R $USER:$USER push_count.txt
+      - run:
           name: Update the push_count.txt file.
           command: script/update_push_count
 workflows:
